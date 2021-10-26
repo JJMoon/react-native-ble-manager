@@ -57,7 +57,8 @@ public class LollipopScanManager extends ScanManager {
         
         if (serviceUUIDs.size() > 0) {
             for(int i = 0; i < serviceUUIDs.size(); i++){
-				ScanFilter filter = new ScanFilter.Builder().setServiceUuid(new ParcelUuid(UUIDHelper.uuidFromString(serviceUUIDs.getString(i)))).build();
+				// ScanFilter filter = new ScanFilter.Builder().setServiceUuid(new ParcelUuid(UUIDHelper.uuidFromString(serviceUUIDs.getString(i)))).build();
+								ScanFilter filter = new ScanFilter.Builder().setDeviceName(serviceUUIDs.getString(i)).build();
                 filters.add(filter);
                 Log.d(bleManager.LOG_TAG, "Filter service: " + serviceUUIDs.getString(i));
             }
